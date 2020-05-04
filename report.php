@@ -30,7 +30,10 @@
                         <a href="index.php" type="submit" class="btn btn-danger btn-fill mt-2 .no-print">Back</a>
                         <button type="submit" data-toggle="modal" data-target="#generateReportsModal" class="btn btn-info btn-fill mt-2 .no-print" onclick="window.print();return false;">Print</button>
                     </div>
+                    
                 </div>
+               <p><center><h3>DR. FERNANDO B. DURAN SR. MEMORIAL HOSPITAL</h3></center></p>    
+                <p style="margin-bottom:-45px; margin-top: 30px;">Records of persons Subsisted during the Month of ________________________</p>
                 <!-- End Row -->
                 <div class="row mt-5">
                     <table class="table table-bordered">
