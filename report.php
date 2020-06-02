@@ -30,9 +30,13 @@
                         <a href="index.php" type="submit" class="btn btn-danger btn-fill mt-2 .no-print">Back</a>
                         <button type="submit" data-toggle="modal" data-target="#generateReportsModal" class="btn btn-info btn-fill mt-2 .no-print" onclick="window.print();return false;">Print</button>
                     </div>
-                    
+
                 </div>
-               <p><center><h3>DR. FERNANDO B. DURAN SR. MEMORIAL HOSPITAL</h3></center></p>    
+                <p>
+                    <center>
+                        <h3>DR. FERNANDO B. DURAN SR. MEMORIAL HOSPITAL</h3>
+                    </center>
+                </p>
                 <p style="margin-bottom:-45px; margin-top: 30px;">Records of persons Subsisted during the Month of ________________________</p>
                 <!-- End Row -->
                 <div class="row mt-5">
@@ -125,7 +129,7 @@
                                     $day31 = $row['day31'];
 
                                     // TOTAL FORMULA
-                                    $listOfDayArray = array($day01, $day02, $day03, $day04, $day05, $day06, $day07, $day08, $day09, $day10, $day11, $day12, $day13, $day14, $day15, $day16, $day17, $day18, $day19, $day20, $day21, $day22, $day23, $day24, $day25, $day25, $day27, $day28, $day29, $day30, $day31);
+                                    $listOfDayArray = array($day01, $day02, $day03, $day04, $day05, $day06, $day07, $day08, $day09, $day10, $day11, $day12, $day13, $day14, $day15, $day16, $day17, $day18, $day19, $day20, $day21, $day22, $day23, $day24, $day25, $day26, $day27, $day28, $day29, $day30, $day31);
                                     $countDay = 0;
                                     for ($listOfDay = 0; count($listOfDayArray) > $listOfDay; $listOfDay++) {
                                         $countDay = $countDay + strlen($listOfDayArray[$listOfDay]);
