@@ -92,6 +92,22 @@
                         ';
                         echo $addSessionSuccessfully;
                     }
+
+                    if (isset($_GET['deletePatient'])) {
+                        $deletePatientSuccessfully = '
+                        <script>
+                        window.setTimeout(function() {
+                            $("#alert_message").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            }, 3000);
+                        </script>
+                        <div id="alert_message" class="alert alert-danger text-center">
+                            Delete Patient Successfully!
+                        </div>
+                        ';
+                        echo $deletePatientSuccessfully;
+                    }
                     ?>
 
                     <!-- Modal -->

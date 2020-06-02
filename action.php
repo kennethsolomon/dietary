@@ -90,6 +90,23 @@ if (isset($_POST['updatePatientBtn'])) {
     }
     exit();
 }
+if (isset($_POST['deletePatientBtn'])) {
+
+    $pId = $_POST['pId'];
+
+    $sql = "DELETE FROM patient WHERE uId='$pId'";
+    if (mysqli_query($conn, $sql)) {
+        $sql = "DELETE FROM patientsubsistence WHERE pId='$pId'";
+        if (mysqli_query($conn, $sql)) {
+            $sql = "DELETE FROM reports WHERE pId='$pId'";
+            if (mysqli_query($conn, $sql)) {
+                header("Location: index.php?deletePatient=1");
+            }
+        }
+    } else {
+        echo "Error deleting record: " . mysqli_error($conn);
+    }
+}
 //Generate Reports Btn
 // if (isset($_POST['generateReportBtn'])) {
 //     $pId = $_POST['pId'];
@@ -3172,7 +3189,27 @@ if (isset($_POST['addSessionBtn'])) {
         if ($all == "on") {
             $sql = "INSERT INTO patientsubsistence (pId, breakfast, lunch, dinner, npo, gl, date) VALUES ('$pId', 'on', 'on', 'on', '$Npo', '$Gl', '$sessionDate')";
             if (mysqli_query($conn, $sql)) {
-                header('Location: searchList.php?uId=' . $pId . '&addSession=1');
+                $sql2 = "SELECT * FROM reports WHERE SUBSTRING(date, 1,7) ='$monthAndYear' AND pId = '$pId'";
+                $result2 = mysqli_query($conn, $sql2);
+                if (mysqli_num_rows($result2) > 0) {
+                    header('Location: searchList.php?uId=' . $pId . '&addSession=1');
+                } else {
+                    $sql3 = "SELECT * FROM patient WHERE uId = '$pId'";
+                    $result3 = mysqli_query($conn, $sql3);
+                    if (mysqli_num_rows($result3) > 0) {
+                        while ($row2 = mysqli_fetch_assoc($result3)) {
+                            $lastName = $row2['lastName'];
+                            $firstName = $row2['firstName'];
+                            $middleName = $row2['middleName'];
+                            $ward = $row2['ward'];
+                        }
+                        $sql4 = "INSERT INTO reports (pId, date, lastName, firstName, middleName, ward) VALUES ('$pId', '$sessionDate', '$lastName', '$firstName', '$middleName', '$ward')";
+                        if (mysqli_query($conn, $sql4)) {
+
+                            header('Location: searchList.php?uId=' . $pId . '&addSession=1');
+                        }
+                    }
+                }
             }
         } else {
             $sql = "INSERT INTO patientsubsistence (pId, breakfast, lunch, dinner, npo, gl, date) VALUES ('$pId', '$Breakfast', '$Lunch', '$Dinner', '$Npo', '$Gl', '$sessionDate')";

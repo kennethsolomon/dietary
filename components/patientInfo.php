@@ -48,8 +48,8 @@ if (mysqli_num_rows($result) > 0) {
             </div>
             
         </div>
-
         <button type="submit" name="updatePatientBtn" class="btn btn-info btn-fill pull-right ml-3">Update Patient Info</button>
+        <button type="submit" name="deletePatientBtn" class="btn btn-danger btn-fill pull-right ml-3">Delete Patient</button>
         <div class="clearfix"></div>
     </form>
 </div>
