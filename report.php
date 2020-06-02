@@ -76,7 +76,7 @@
 
                             $month = $_GET['month'];
                             $year = $_GET['year'];
-                           
+
                             $ward = $_GET['ward'];
                             $monthAndYear = $year . '-' . $month;
 
@@ -85,7 +85,7 @@
 
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                   
+
                                     $lastName = $row['lastName'];
                                     $firstName = $row['firstName'];
                                     $middleName = $row['middleName'];
@@ -180,7 +180,6 @@
                                     } else {
                                         echo $devideCount;
                                     }
-
                                     '</td>
                                     </tr>';
                                 }
