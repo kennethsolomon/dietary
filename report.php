@@ -35,9 +35,10 @@
                 <p>
                     <center>
                         <h3>DR. FERNANDO B. DURAN SR. MEMORIAL HOSPITAL</h3>
+			<p style="margin-bottom:-30px; margin-top: -15px;">Macabog, Sorsogon City</p>
                     </center>
                 </p>
-                <p style="margin-bottom:-45px; margin-top: 30px;">Records of persons Subsisted during the Month of ________________________</p>
+                <p style="margin-bottom:-30px; margin-top: 30px;">Records of persons Subsisted during the Month of ________________________</p>
                 <!-- End Row -->
                 <div class="row mt-5">
                     <table class="table table-bordered">
