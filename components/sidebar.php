@@ -11,10 +11,16 @@
             </a>
         </div>
         <ul class="nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="nc-icon nc-chart-pie-35"></i>
                     <p>Search</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="patientSessionSearch.php">
+                    <i class="nc-icon nc-chart-pie-35"></i>
+                    <p>Session Search</p>
                 </a>
             </li>
             <!-- <li>
