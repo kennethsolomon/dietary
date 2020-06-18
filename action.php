@@ -91,9 +91,7 @@ if (isset($_POST['updatePatientBtn'])) {
     exit();
 }
 if (isset($_POST['deletePatientBtn'])) {
-
     $pId = $_POST['pId'];
-
     $sql = "DELETE FROM patient WHERE uId='$pId'";
     if (mysqli_query($conn, $sql)) {
         $sql = "DELETE FROM patientsubsistence WHERE pId='$pId'";

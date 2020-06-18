@@ -124,9 +124,7 @@
 
                                 <form action="server.php" class="form-inline p-3" method="post">
                                     <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-info" placeholder="Search..." style="width:100%">
-                                    <!-- <input type="submit" name="submit" value="Search" class="btn btn-info btn-md rounded-0" stlye="width:20%"> -->
                                 </form>
-
                             </div>
                             <div class="col-md-9" style="position:relative; margin-top:-38px; margin-left:25px">
                                 <div class="list-group" id="show-list">
@@ -136,11 +134,7 @@
 
                         </div>
                     </div>
-
-
                 </div>
-
-
                 <div class="container" id="patientTable">
                     <center>
                         <h2>Patient Session Search:</h2>
@@ -151,6 +145,7 @@
                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Full Name</th>
                                         <th>Ward</th>
                                         <th>Session Date</th>
@@ -164,11 +159,11 @@
                                 <tbody>
 
                                     <?php
-                                    $sql = "SELECT * FROM patientsubsistence LIMIT 10";
+                                    $sql = "SELECT * FROM patientsubsistence ORDER BY id desc LIMIT 10";
                                     $result = mysqli_query($conn, $sql);
-
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
+                                            $id = $row['id'];
                                             $pId = $row['pId'];
                                             $date = $row['date'];
                                             $breakfast = $row['breakfast'];
@@ -177,7 +172,7 @@
                                             $npo = $row['npo'];
                                             $gl = $row['gl'];
 
-                                            $sql2 = "SELECT * FROM patient where uId = '$pId' LIMIT 10";
+                                            $sql2 = "SELECT * FROM patient where uId = '$pId'";
                                             $result2 = mysqli_query($conn, $sql2);
 
                                             if (mysqli_num_rows($result2) > 0) {
@@ -191,6 +186,7 @@
 
                                             echo '
                                                 <tr>
+                                                <td>' . $id . '</td>
                                                 <td>' . $lastName . ',' . $firstName . ' ' . $middleName . '</td>
                                                 <td>' . $ward . '</td>
                                                 <td>' . $date . '</td>
@@ -208,6 +204,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Full Name</th>
                                         <th>Ward</th>
                                         <th>Session Date</th>
