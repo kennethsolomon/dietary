@@ -124,9 +124,7 @@
 
                                 <form action="server.php" class="form-inline p-3" method="post">
                                     <input type="text" name="search" id="search" class="form-control form-control-lg rounded-0 border-info" placeholder="Search..." style="width:100%">
-                                    <!-- <input type="submit" name="submit" value="Search" class="btn btn-info btn-md rounded-0" stlye="width:20%"> -->
                                 </form>
-
                             </div>
                             <div class="col-md-9" style="position:relative; margin-top:-38px; margin-left:25px">
                                 <div class="list-group" id="show-list">
@@ -136,11 +134,7 @@
 
                         </div>
                     </div>
-
-
                 </div>
-
-
                 <div class="container" id="patientTable">
                     <center>
                         <h2>Patient Session Search:</h2>
@@ -167,7 +161,6 @@
                                     <?php
                                     $sql = "SELECT * FROM patientsubsistence ORDER BY id desc LIMIT 10";
                                     $result = mysqli_query($conn, $sql);
-
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                             $id = $row['id'];
