@@ -85,7 +85,7 @@ if (isset($_POST['save'])) {
     } else {
       echo "Error: " . mysqli_error($conn);
     }
-    exit();
+	exit();
   }
 }
 

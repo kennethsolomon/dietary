@@ -151,6 +151,7 @@
                             <table id="example" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Full Name</th>
                                         <th>Ward</th>
                                         <th>Session Date</th>
@@ -164,11 +165,12 @@
                                 <tbody>
 
                                     <?php
-                                    $sql = "SELECT * FROM patientsubsistence LIMIT 10";
+                                    $sql = "SELECT * FROM patientsubsistence ORDER BY id desc LIMIT 10";
                                     $result = mysqli_query($conn, $sql);
 
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
+                                            $id = $row['id'];
                                             $pId = $row['pId'];
                                             $date = $row['date'];
                                             $breakfast = $row['breakfast'];
@@ -177,7 +179,7 @@
                                             $npo = $row['npo'];
                                             $gl = $row['gl'];
 
-                                            $sql2 = "SELECT * FROM patient where uId = '$pId' LIMIT 10";
+                                            $sql2 = "SELECT * FROM patient where uId = '$pId'";
                                             $result2 = mysqli_query($conn, $sql2);
 
                                             if (mysqli_num_rows($result2) > 0) {
@@ -191,6 +193,7 @@
 
                                             echo '
                                                 <tr>
+                                                <td>' . $id . '</td>
                                                 <td>' . $lastName . ',' . $firstName . ' ' . $middleName . '</td>
                                                 <td>' . $ward . '</td>
                                                 <td>' . $date . '</td>
@@ -208,6 +211,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Full Name</th>
                                         <th>Ward</th>
                                         <th>Session Date</th>
