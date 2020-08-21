@@ -77,6 +77,21 @@
                     <div id="display_area"></div>
 
                     <?php
+                    if (isset($_GET['backup'])) {
+                        $addSessionSuccessfully = '
+                        <script>
+                        window.setTimeout(function() {
+                            $("#alert_message").fadeTo(500, 0).slideUp(500, function(){
+                                $(this).remove(); 
+                            });
+                            }, 3000);
+                        </script>
+                        <div id="alert_message" class="alert alert-info text-center">
+                            Backup Data Successfully!
+                        </div>
+                        ';
+                        echo $addSessionSuccessfully;
+                    }
                     if (isset($_GET['updateSession'])) {
                         $addSessionSuccessfully = '
                         <script>

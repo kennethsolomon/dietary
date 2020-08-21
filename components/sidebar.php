@@ -47,12 +47,13 @@
                     <p>Generate Reports</p>
                 </a>
             </li>
-            <!-- <li>
-                <a class="nav-link" href="./icons.html">
+            <li>
+                <a class="nav-link" href="export.php">
                     <i class="nc-icon nc-atom"></i>
-                    <p>Icons</p>
+                    <p>Backup Database</p>
                 </a>
             </li>
+            <!--
             <li>
                 <a class="nav-link" href="./maps.html">
                     <i class="nc-icon nc-pin-3"></i>
